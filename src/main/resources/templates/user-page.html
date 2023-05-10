@@ -58,13 +58,13 @@
                             <th>Role</th>
                         </tr>
                         </thead>
-                        <tbody th:each="user : ${users}">
+                        <tbody>
                         <tr>
-                            <th><p th:text="${user.id}"></p></th>
-                            <th><p th:text="${user.username}"></p></th>
-                            <th><p th:text="${user.email}"></p></th>
+                            <th><p th:text="${userPrincipal.id}"></p></th>
+                            <th><p th:text="${userPrincipal.username}"></p></th>
+                            <th><p th:text="${userPrincipal.email}"></p></th>
                             <th>
-                                <div th:each="role : ${user.getRoles()}">
+                                <div th:each="role : ${userPrincipal.getRoles()}">
                                     <p th:text="${role}"></p>
                                 </div>
                             </th>

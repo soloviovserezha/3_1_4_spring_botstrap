@@ -6,7 +6,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -27,11 +26,11 @@ public class User implements UserDetails {
 
     private boolean active;
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany
     @Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE,
             org.hibernate.annotations.CascadeType.MERGE,
             org.hibernate.annotations.CascadeType.PERSIST})
-    private Set<Role> roles = new HashSet<>();
+    private Set<Role> roles;
 
     public User() {
     }
